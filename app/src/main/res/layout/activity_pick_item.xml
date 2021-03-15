@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:fontFamily="@font/dosis_bold"
+        android:gravity="center"
+        android:text="@string/pick_items"
+        android:textColor="#000000"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/dosis"
+        android:text="Item code"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/code_et"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#23DADADA"
+        android:ems="10"
+        android:fontFamily="@font/dosis"
+        android:inputType="number"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:textCursorDrawable="@drawable/cursor" />
+    <Button
+        android:id="@+id/next_btn"
+        android:layout_width="96dp"
+        android:layout_height="48dp"
+        android:layout_gravity="end"
+        android:drawableBottom="@drawable/ic_subdirectory_arrow_right_black_24dp"
+        android:gravity="center"
+        android:visibility="gone" />
+</LinearLayout>

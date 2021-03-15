@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Warehouse</string>
+    <string name="sign_in"><u>Sign in</u></string>
+    <string name="menu"><u>Menu</u></string>
+    <string name="orders"><u>Orders</u></string>
+    <string name="items"><u>Items</u></string>
+    <string name="pick_items"><u>Pick items</u></string>
+</resources>

@@ -1,0 +1,78 @@
+syntax="proto3";
+
+package warehouse;
+
+option java_multiple_files = true;
+option java_package = "warehouse";
+option java_outer_classname = "Warehouse";
+option objc_class_prefix = "WH";
+
+
+
+service WorkWithOrders{
+    rpc getAllOrders(Empty) returns(stream Order);
+
+    rpc getOrderById(ID) returns(Order);
+
+    rpc orderAssembled(ID) returns(Empty);
+
+    rpc pickOrderLater(ID) returns(Empty);
+
+    rpc setPickProblem(Order) returns(Empty);
+}
+
+service WorkWithItems{
+    rpc getAllItems(Empty) returns(stream Item);
+
+    rpc getItemById(ID) returns(Item);
+
+    rpc setItemsNumber(TotalItemsNumber) returns(Empty);
+
+    rpc putItemIntoBin(ID) returns(Empty);
+
+    rpc getItemsByOrderId(ID) returns(stream Item);
+}
+
+service WorkWithBins{
+    rpc getAllBins(Empty) returns(stream Bin);
+
+    rpc getBinByItemId(stream ID) returns(stream Bin);
+}
+
+message ID{
+    int32 id=1;
+}
+
+message Item{
+    int32 id=1;
+    string name=2;
+    int32 code1=3;
+    int32 code2=4;
+    string description=5;
+    int32 binId=6;
+    int32 orderId=7;
+    int32 quantity=8;
+}
+
+message Bin{
+    int32 id=1;
+    string name=2;
+    int32 code1=3;
+    int32 code2=4;
+    repeated Item items=5;
+}
+
+message Order{
+    int32 id=1;
+    string name=2;
+    int32 code1=3;
+    int32 code2=4;
+    string pickProblem=6;
+}
+
+message TotalItemsNumber{
+    int32 itemId=1;
+    int32 quantity=2;
+}
+
+message Empty{}
